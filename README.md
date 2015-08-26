@@ -25,6 +25,34 @@ taglist, a hierarchy of the document can be displayed as below:
 A file called `markdown.c` is added to the original project and some
 modification of some files
 
+## What's the features?
+
+* extract the headings
+
+	see the pic above
+
+* extract the headings discarding the `<a>` html tag
+	
+		## some heading 1
+		### <a name="test"></a>some heading
+		## some heading 2
+		### <a name="test1"></a>some heading1
+
+	the above will generate the taglist as follow:
+
+		some heading 1
+		  some heading
+		some heading 2
+		  some heading1
+
+	this features is very useful for some markdown doc with many `jump tags`, the
+	taglist wont display so many annoying html tags:
+
+		some heading 1
+		  <a name="test"></a>some heading
+		some heading 2
+		  <a name="test1"></a>some heading1
+
 ## How to define a new language in Ctags?
 
 in ctags, a new language is defined with a new .c file say new_language.c
