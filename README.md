@@ -1,7 +1,10 @@
 Exuberant Ctags (extended)
 ==============
+
+## What's this?
+
 This a branch of Exuberant Ctags, the original code comes from:
-<http://ctags.sourceforge.net>, see the `README` in the project for more
+<http://ctags.sourceforge.net>, see `README` in the project for more
 details.
 
 This project, inherited from the original, follows the GNU General Public License
@@ -11,19 +14,23 @@ This project, inherited from the original, follows the GNU General Public Licens
 > Lua, Makefile, Pascal, Perl, PHP, PL/SQL, Python, REXX, Ruby, Scheme,
 > S-Lang, SML (Standard ML), Tcl, Vera, Verilog, VHDL, Vim, and YACC.
 
-Besides above, this branch implemented a <font color=#ff0000>**markdown**</font>
+Besides above, this branch implemented a <font color=#ff0000>**_markdown_**</font>
 module, which extracts the headings of the markdown doc. Cooperated with vim and
-taglist, a hiarchie of the document can be displayed as below:
+taglist, a hierarchy of the document can be displayed as below:
 
 ![markdown-taglist.png](markdown-taglist.png)
 
-A file called `markdown.c` is added to the original project is what I have done.
+## What's done?
 
-## How to define a new language in Ctags
+A file called `markdown.c` is added to the original project and some
+modification of some files
 
-new language defined with a new .c file say new_language.c
+## How to define a new language in Ctags?
 
-file to modify: 
+in ctags, a new language is defined with a new .c file say new_language.c
+
+besides .c file, there are files to modify:
+
 1. source.mak
 
 	source
@@ -52,7 +59,8 @@ file to modify:
 
 2. taglist.vim
 
-	taglist parse catags' output
+	taglist parses catags' output, taglist needs to be notified when there is a
+	new language
 
 		" vim language
 		let s:tlist_def_vim_settings =
