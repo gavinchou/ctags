@@ -57,7 +57,9 @@
 	VhdlParser, \
 	VimParser, \
 	YaccParser, \
-	MarkdownParser
+	MarkdownParser, \
+	GoParser
+
 
 #endif  /* _PARSERS_H */
 

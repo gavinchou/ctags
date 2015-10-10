@@ -58,6 +58,7 @@ SOURCES = \
 	vim.c \
 	yacc.c \
 	markdown.c \
+	go.c \
 	vstring.c
 
 ENVIRONMENT_HEADERS = \
@@ -121,4 +122,5 @@ OBJECTS = \
 	vim.$(OBJEXT) \
 	yacc.$(OBJEXT) \
 	markdown.$(OBJEXT) \
+	go.$(OBJEXT) \
 	vstring.$(OBJEXT)

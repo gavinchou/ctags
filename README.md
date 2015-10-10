@@ -3,8 +3,8 @@ Exuberant Ctags (extended)
 
 ## What's this?
 
-This a branch of Exuberant Ctags, the original code comes from:
-<http://ctags.sourceforge.net>, see `README` in the project for more
+This is a branch of Exuberant Ctags, the source code comes from:
+<http://ctags.sourceforge.net>, see `README`(with no '.md' extension) for more
 details.
 
 This project, inherited from the original, follows the GNU General Public License
@@ -16,7 +16,7 @@ This project, inherited from the original, follows the GNU General Public Licens
 
 Besides above, this branch implemented a <font color=#ff0000>**_markdown_**</font>
 module, which extracts the headings of the markdown doc. Cooperated with vim and
-taglist, a hierarchy of the document can be displayed as below:
+taglist, a hierarchy of the document can be displayed as follows:
 
 ![markdown-taglist.png](markdown-taglist.png)
 
