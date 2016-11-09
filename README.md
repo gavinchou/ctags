@@ -25,7 +25,7 @@ taglist, a hierarchy of the document can be displayed as follows:
 A file called `markdown.c` is added to the original project and some
 modification of some files
 
-## What's the features?
+## What are the features?
 
 * extract the headings
 
@@ -55,9 +55,9 @@ modification of some files
 
 ## How to define a new language in Ctags?
 
-in ctags, a new language is defined with a new .c file say new_language.c
+in ctags, a new language is defined with a new `.c` file say `new_language.c`
 
-besides .c file, there are files to modify:
+besides `.c` file, there are files to modify:
 
 1. source.mak
 
