@@ -134,8 +134,8 @@ static void parseHeading(const unsigned char* line) {
       cp += i;
     }
   }
-
-  for (int i = 0; i < MAX_HEADING_LENGTH && *cp != '\0'; ++i, ++cp) {
+  int i;
+  for (i = 0; i < MAX_HEADING_LENGTH && *cp != '\0'; ++i, ++cp) {
     vStringPut(name, (int) *cp);
   }
 
