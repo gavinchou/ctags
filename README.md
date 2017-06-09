@@ -3,8 +3,8 @@ Exuberant Ctags (extended)
 
 ## What's this?
 
-This is a branch of Exuberant Ctags, the source code comes from:
-<http://ctags.sourceforge.net>, see `README`(with no '.md' extension) for more
+This is a fork of Exuberant Ctags, the source code comes from:
+<http://ctags.sourceforge.net>, see `README`(without '.md' extension) for more
 details.
 
 This project, inherited from the original, follows the GNU General Public License
@@ -25,7 +25,7 @@ taglist, a hierarchy of the document can be displayed as follows:
 A file called `markdown.c` is added to the original project and some
 modification of some files
 
-## What are the features?
+## What's new?
 
 * extract the headings
 
@@ -99,3 +99,36 @@ besides `.c` file, there are files to modify:
 
 		" markdown language
 		let s:tlist_def_markdown_settings = 'markdown;h:heading'
+
+3. config for tagbar
+
+		let g:tagbar_type_markdown = {
+    \ 'ctagstype' : 'markdown',
+    \ 'kinds' : [
+      \ 'h:heading',
+    \ ],
+    \ 'sort' : 0
+		\ }
+
+		let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds' : [
+      \ 'f:function',
+      \ 'p:package',
+      \ 'v:variable',
+      \ 't:type',
+      \ 'c:const',
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+    \ 't' : 'ctype',
+    \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+    \ 'ctype' : 't',
+    \ 'ntype' : 'n'
+    \ },
+    \ 'sort' : 0
+		\ }
+
+
