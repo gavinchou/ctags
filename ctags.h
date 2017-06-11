@@ -15,13 +15,13 @@
 *   MACROS
 */
 #ifndef PROGRAM_VERSION
-# define PROGRAM_VERSION "5.8"
+# define PROGRAM_VERSION "5.8-patched-by-gavin"
 #endif
 #define PROGRAM_NAME      "Exuberant Ctags"
-#define PROGRAM_URL       "http://ctags.sourceforge.net"
-#define PROGRAM_COPYRIGHT "Copyright (C) 1996-2009"
-#define AUTHOR_NAME       "Darren Hiebert"
-#define AUTHOR_EMAIL      "dhiebert@users.sourceforge.net"
+#define PROGRAM_URL       "http://ctags.sourceforge.net, http://github.com/gavinchou/ctags"
+#define PROGRAM_COPYRIGHT "Copyright (C) 1996-2017"
+#define AUTHOR_NAME       "Darren Hiebert, modified by Gavin Chou"
+#define AUTHOR_EMAIL      "dhiebert@users.sourceforge.net, gavineaglechou@gmail.com"
 
 #endif	/* _CTAGS_H */
 

@@ -14,11 +14,19 @@ This project, inherited from the original, follows the GNU General Public Licens
 > Lua, Makefile, Pascal, Perl, PHP, PL/SQL, Python, REXX, Ruby, Scheme,
 > S-Lang, SML (Standard ML), Tcl, Vera, Verilog, VHDL, Vim, and YACC.
 
+### markdown
+
 Besides above, this branch implemented a <font color=#ff0000>**_markdown_**</font>
 module, which extracts the headings of the markdown doc. Cooperated with vim and
 taglist, a hierarchy of the document can be displayed as follows:
 
 ![markdown-taglist.png](markdown-taglist.png)
+
+### go
+go.c from github.
+
+### protobuf
+protobuf.c from <https://github.com/universal-ctags/ctags.git>
 
 ## What's done?
 
@@ -69,13 +77,13 @@ besides `.c` file, there are files to modify:
 		vstring.c
 		...
 
-	object
+	OBJECT
 
 		yacc.$(OBJEXT) \
 		new_language.$(OBJEXT) \
 		vstring.$(OBJEXT)
 
-2. parser.h
+2. parsers.h
 
 	add new_language parser
 
@@ -85,7 +93,9 @@ besides `.c` file, there are files to modify:
 		YaccParser, \
 		NewLanguageParser
 
-2. taglist.vim
+## config vim 
+here are some instructions for configuring vim with ctags support
+### config for `taglist.vim`
 
 	taglist parses catags' output, taglist needs to be notified when there is a
 	new language
@@ -100,35 +110,34 @@ besides `.c` file, there are files to modify:
 		" markdown language
 		let s:tlist_def_markdown_settings = 'markdown;h:heading'
 
-3. config for tagbar
+### config for tagbar
 
 		let g:tagbar_type_markdown = {
-    \ 'ctagstype' : 'markdown',
-    \ 'kinds' : [
-      \ 'h:heading',
-    \ ],
-    \ 'sort' : 0
+		\ 'ctagstype' : 'markdown',
+		\ 'kinds' : [
+		  \ 'h:heading',
+		\ ],
+		\ 'sort' : 0
 		\ }
-
+		
 		let g:tagbar_type_go = {
-    \ 'ctagstype' : 'go',
-    \ 'kinds' : [
-      \ 'f:function',
-      \ 'p:package',
-      \ 'v:variable',
-      \ 't:type',
-      \ 'c:const',
-    \ ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : {
-    \ 't' : 'ctype',
-    \ 'n' : 'ntype'
-    \ },
-    \ 'scope2kind' : {
-    \ 'ctype' : 't',
-    \ 'ntype' : 'n'
-    \ },
-    \ 'sort' : 0
+		\ 'ctagstype' : 'go',
+		\ 'kinds' : [
+		  \ 'f:function',
+		  \ 'p:package',
+		  \ 'v:variable',
+		  \ 't:type',
+		  \ 'c:const',
+		\ ],
+		\ 'sro' : '.',
+		\ 'kind2scope' : {
+		\ 't' : 'ctype',
+		\ 'n' : 'ntype'
+		\ },
+		\ 'scope2kind' : {
+		\ 'ctype' : 't',
+		\ 'ntype' : 'n'
+		\ },
+		\ 'sort' : 0
 		\ }
-
 

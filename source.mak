@@ -59,6 +59,7 @@ SOURCES = \
 	yacc.c \
 	markdown.c \
 	go.c \
+	protobuf.c \
 	vstring.c
 
 ENVIRONMENT_HEADERS = \
@@ -123,4 +124,6 @@ OBJECTS = \
 	yacc.$(OBJEXT) \
 	markdown.$(OBJEXT) \
 	go.$(OBJEXT) \
+	protobuf.$(OBJEXT) \
 	vstring.$(OBJEXT)
+
