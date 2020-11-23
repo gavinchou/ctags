@@ -55,6 +55,8 @@ const int MAX_HEADING_LEVEL = 6;
 // max display heading length
 const int MAX_HEADING_LENGTH = 200;
 
+int gCodeBlockMarkCnt = 0;
+
 /*
  *   DATA DECLARATIONS
  */
@@ -119,12 +121,13 @@ static void parseHeading(const unsigned char* line) {
 
   size_t offset = cp - line;
   boolean isHtmlTag = FALSE;
-  // here is a trick: when *cp != '<', cp + 1 wont be accessed, hence there wont be 
-  // any illegal address
+  // here is a trick: when *cp != '<', cp + 1 wont be accessed,
+  // hence there wont be any illegal address
   if (*cp == '<' && *(cp + 1) == 'a' && lineLen - offset > 7) {
     int i = 7;
     for (; *(cp + i) != '\0'; ++i) {
-      if (*(cp + i - 3) == '<' && *(cp + i - 2) == '/' && *(cp + i - 1) == 'a' && *(cp + i) == '>') {
+      if (*(cp + i - 3) == '<' && *(cp + i - 2) == '/'
+          && *(cp + i - 1) == 'a' && *(cp + i) == '>') {
         isHtmlTag = TRUE;
         ++i;
         break;
@@ -166,12 +169,19 @@ static const unsigned char * readMarkdownLine (void)
   return line;
 }
 
+static inline boolean inCodeBlock() { // this line is in code block
+  return (gCodeBlockMarkCnt & 0x01) ? TRUE : FALSE;
+}
+
 static boolean parseMarkdownLine (const unsigned char *line)
 {
   boolean readNextLine = TRUE;
 
-  if (isHeading(line))
-  {
+  if (strncmp((const char*) line, "```", (size_t) 3) == 0) {
+    ++gCodeBlockMarkCnt;
+  }
+
+  if (!inCodeBlock() && isHeading(line)) {
     parseHeading(line);
   }
 
